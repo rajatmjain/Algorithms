@@ -21,6 +21,5 @@ def mergeSort(inputList):
     left,right = mergeSort(inputList[:len(inputList)//2]),mergeSort(inputList[len(inputList)//2:])
     return merge(left,right)
 
-print(mergeSort([1,3,52,4,6,7,0,-1,99,42,77]))
-    
+print(mergeSort([1,3,52,4,6,7,0,-1,99,42,77]))   
     
