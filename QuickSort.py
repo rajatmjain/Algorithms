@@ -1,4 +1,4 @@
-def QuickSort(inputList):
+def quickSort(inputList):
     if len(inputList)<=1:
         return inputList
     else:
@@ -10,8 +10,8 @@ def QuickSort(inputList):
                 lessThanPivot.append(element)
             elif element>=pivot:
                 greaterThanPivot.append(element)
-        return QuickSort(lessThanPivot) + [pivot] + QuickSort(greaterThanPivot)
+        return quickSort(lessThanPivot) + [pivot] + quickSort(greaterThanPivot)
 
-print(QuickSort([1,5,2,7,4,6,23,12,9,7,1]))
+print(quickSort([1,5,2,7,4,6,23,12,9,7,1]))
             
         

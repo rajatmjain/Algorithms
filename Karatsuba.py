@@ -42,6 +42,5 @@ def karatsuba(x,y):
 print(karatsuba(input("First number: "),input("Second number: ")))
 
 
-
         
             
