@@ -12,6 +12,6 @@ def quickSort(inputList):
                 greaterThanPivot.append(element)
         return quickSort(lessThanPivot) + [pivot] + quickSort(greaterThanPivot)
 
-print(quickSort([1,5,2,7,4,6,23,12,9,7,1]))
+# print(quickSort([1,5,2,7,4,6,23,12,9,7,1]))
             
         
