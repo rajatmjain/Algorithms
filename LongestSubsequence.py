@@ -3,6 +3,7 @@ class LongestSubsequence():
         self.x = x 
         self.y = y 
 
+    #Recursive approach
     def lcs(self,n,m):
         if(n==0 or m==0):
             return 0
