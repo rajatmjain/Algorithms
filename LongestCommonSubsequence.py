@@ -41,7 +41,7 @@ def LongestCommonSubsequence(X,Y):
     lcs = ""
     for s in subS:
         lcs += s
-    return ("The longest common subsequence of length %d is %s"%(len(lcs),lcs))
+    return ("The longest common subsequence of %s and %s is %s, of length %d."%(X,Y,lcs,len(lcs)))
 
 print(LongestCommonSubsequence("BCADBC","ACBDC"))
 
