@@ -6,6 +6,8 @@ class Node:
 
 
 def dfs(root: Node):
+    if(not root):
+        return []
     stack = [root]
     visitedOrder = []
     while(len(stack)>0):
