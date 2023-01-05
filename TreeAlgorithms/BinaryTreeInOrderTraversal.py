@@ -4,13 +4,17 @@ class Node:
         self.right = None
         self.left = None
 
-def dfsRec(root:Node):
+visitedOrder = []
+def inorder(root:Node):
     if(root is None):
-        return float('-inf')
-    if(not root.left and not root.right):
-        return root.val
-    sum = root.val
-    return sum + max(dfsRec(root.left),dfsRec(root.right)) 
+        return []
+    inorder(root.left)
+    visitedOrder.append(root.val)
+    inorder(root.right)
+
+    return visitedOrder
+    
+     
 
 # Nodes creation
 a = Node(1)
@@ -38,9 +42,6 @@ d.left = h
 #   4  5 6  7
 # /
 # 8
-# Max = 15
 
-print("Depth First Rec Max Root to Leaf")
-print("Max Root to Leaf: ",dfsRec(a))
+print("Preorder: ",inorder(a))
 print()
-  
