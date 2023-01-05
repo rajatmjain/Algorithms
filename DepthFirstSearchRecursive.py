@@ -5,20 +5,18 @@ class Node:
         self.left = None
 
 
+visitedOrder = []
 def dfs(root: Node):
     if(not root):
         return []
-    stack = [root]
-    visitedOrder = []
-    while(len(stack)>0):
-        current = stack.pop()
-        visitedOrder.append(current.val)
-        if(current.right):
-            stack.append(current.right)
-        if(current.left):
-            stack.append(current.left)
-    
+    visitedOrder.append(root.val)   
+    dfs(root.left)
+    dfs(root.right)
+
     return visitedOrder
+
+  
+  
 
 a = Node('a')
 b = Node('b')
