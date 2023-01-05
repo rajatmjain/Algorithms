@@ -38,6 +38,15 @@ c.left = f
 c.right = g
 d.left = h
 
+# Tree
+#      a
+#     / \
+#    b   c
+#   / \  / \
+#   d  e f  g
+# /
+# h
+
 print("Depth First Search")
 print("Visited in order: ",dfs(a))
 
