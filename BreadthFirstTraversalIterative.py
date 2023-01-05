@@ -5,16 +5,21 @@ class Node:
         self.left = None
 
 
-visitedOrder = []
-def dfs(root: Node):
+def bfs(root: Node):
+    visitedOrder = []
     if(not root):
         return []
-    visitedOrder.append(root.val)   
-    dfs(root.left)
-    dfs(root.right)
-
+    queue = [root]
+    while(len(queue)>0):
+        current = queue.pop(0)
+        visitedOrder.append(current.val)
+        if(current.left):
+            queue.append(current.left)
+        if(current.right):
+            queue.append(current.right)
     return visitedOrder
- 
+
+
 # Nodes creation
 a = Node('a')
 b = Node('b')
@@ -42,5 +47,11 @@ d.left = h
 # /
 # h
 
-print("Depth First Search")
-print("Visited in order: ",dfs(a))
+print("Breadth First Traversal")
+print("Visited in order: ",bfs(a))
+
+
+
+
+
+        

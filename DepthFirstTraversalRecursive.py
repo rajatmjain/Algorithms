@@ -5,21 +5,16 @@ class Node:
         self.left = None
 
 
+visitedOrder = []
 def dfs(root: Node):
-    if(not root.val):
+    if(not root):
         return []
-    stack = [root]
-    visitedOrder = []
-    while(len(stack)>0):
-        current = stack.pop()
-        visitedOrder.append(current.val)
-        if(current.right):
-            stack.append(current.right)
-        if(current.left):
-            stack.append(current.left)
-    
-    return visitedOrder
+    visitedOrder.append(root.val)   
+    dfs(root.left)
+    dfs(root.right)
 
+    return visitedOrder
+ 
 # Nodes creation
 a = Node('a')
 b = Node('b')
@@ -47,11 +42,5 @@ d.left = h
 # /
 # h
 
-print("Depth First Search")
+print("Depth First Traversal")
 print("Visited in order: ",dfs(a))
-
-
-
-
-
-        
