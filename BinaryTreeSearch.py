@@ -80,10 +80,4 @@ for tc in testCases:
     print("Depth First Search")
     print("Search result for {}: ".format(tc),dfs(a,tc))
     print()
-
-
-
-
-
-
-        
+  
