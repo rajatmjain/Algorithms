@@ -5,13 +5,13 @@ class Node:
         self.left = None
 
 visitedOrder = []
-def inorder(root:Node):
+def preorder(root:Node):
     if(root is None):
         return []
-    inorder(root.left)
-    visitedOrder.append(root.val)
-    inorder(root.right)
 
+    visitedOrder.append(root.val)
+    preorder(root.left)
+    preorder(root.right)
     return visitedOrder
     
      
@@ -43,5 +43,5 @@ d.left = h
 # /
 # 8
 
-print("In-Order: ",inorder(a))
+print("Pre-Order: ",preorder(a))
 print()
