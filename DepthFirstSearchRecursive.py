@@ -14,10 +14,8 @@ def dfs(root: Node):
     dfs(root.right)
 
     return visitedOrder
-
-  
-  
-
+ 
+# Nodes creation
 a = Node('a')
 b = Node('b')
 c = Node('c')
@@ -26,7 +24,7 @@ e = Node('e')
 f = Node('f')
 g = Node('g')
 h = Node('h')
-
+# Tree creation
 a.left = b
 a.right = c
 b.left = d
