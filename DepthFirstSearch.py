@@ -7,16 +7,16 @@ class Node:
 
 def dfs(root: Node):
     stack = [root]
-    visited = []
+    visitedOrder = []
     while(len(stack)>0):
         current = stack.pop()
-        visited.append(current.val)
+        visitedOrder.append(current.val)
         if(current.right):
             stack.append(current.right)
         if(current.left):
             stack.append(current.left)
     
-    return visited
+    return visitedOrder
 
 a = Node('a')
 b = Node('b')
@@ -36,7 +36,7 @@ c.right = g
 d.left = h
 
 print("Depth First Search")
-print(dfs(a))
+print("Visited in order: ",dfs(a))
 
 
 
