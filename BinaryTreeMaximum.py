@@ -6,40 +6,41 @@ class Node:
 
 
 def bfs(root: Node):
-    min = root.val
+    max = root.val
     if(not root):
         return []
     queue = [root]
     while(len(queue)>0):
         current = queue.pop(0)
-        if(current.val<min):
-            min = current.val
+        if(current.val>max):
+            max = current.val
         if(current.left):
             queue.append(current.left)
         if(current.right):
             queue.append(current.right)
-    return min
+    return max
 
 def dfs(root: Node):
     if(not root.val):
         return []
     stack = [root]
-    min = root.val
+    max = root.val
     while(len(stack)>0):
         current = stack.pop()
-        if(current.val<min):
-            min = current.val
+        if(current.val>max):
+            max = current.val
         if(current.right):
             stack.append(current.right)
         if(current.left):
             stack.append(current.left)
-    return min
+    return max
 
 def dfsRec(root:Node):
     if(not root.val):
         return []
-    return min(root.val,dfsRec(root.left),dfs(root.right))
+    return max(root.val,dfsRec(root.left),dfs(root.right))
     
+
 # Nodes creation
 a = Node(10)
 b = Node(223)
@@ -66,18 +67,18 @@ d.left = h
 #   4 57-8  7
 # /
 # 999
-# Min = -8
+# Max = 999
 
 
-print("Breadth First Min")
-print("Min: ",bfs(a))
+print("Breadth First Max")
+print("Max: ",bfs(a))
 print()
 
-print("Depth First Iter Min")
-print("Min: ",dfs(a))
+print("Depth First Iter Max")
+print("Max: ",dfs(a))
 print()
 
-print("Depth First Rec Min")
-print("Min: ",dfs(a))
+print("Depth First Rec Max")
+print("Max: ",dfs(a))
 print()
   
