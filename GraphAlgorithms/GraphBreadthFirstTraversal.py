@@ -1,25 +1,15 @@
 
-def dfsIte(inputGraph:dict,startingNode:any):
+def bfs(inputGraph:dict,startingNode:any):
     if(inputGraph==None):
         return []
     result = []
-    stack = [startingNode]
-    while(len(stack)>0):
-        current = stack.pop()
+    queue = [startingNode]
+    while(len(queue)>0):
+        current = queue.pop(0)
         result.append(current)
         for c in inputGraph[current]:
-            stack.append(c)
-        
+            queue.append(c)
     return result
-
-recResult = []
-def dfsRec(inputGraph:dict,startingNode:any):
-    if(inputGraph==None):
-        return []
-    recResult.append(startingNode)
-    for neighbour in inputGraph[startingNode]:
-        dfsRec(inputGraph,neighbour)
-    return recResult
 
 # Graph creation 
 graph = dict()
@@ -39,7 +29,4 @@ graph['f'] = []
 #  v
 #  d->f 
 
-print("Graph Iterative DFS Traversal Order: ",dfsIte(graph,'a'))
-print("Graph Recursive DFS Traversal Order: ",dfsRec(graph,'a'))
-
-
+print("Graph BFS Traversal Order: ",bfs(graph,'a'))
