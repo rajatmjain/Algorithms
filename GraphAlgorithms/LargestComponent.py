@@ -32,6 +32,3 @@ def largestComponent(graph:dict):
 edges = [['a','b'],['d','c'],['e','c'],['e','c'],['a','i'],['a','f'],['f','i']]
 graph = edgeToGraph(edges)
 print("Length of largest connected component in a graph: {}".format(largestComponent(graph)))
-
-
-        
