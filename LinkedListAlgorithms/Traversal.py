@@ -18,8 +18,7 @@ def traversalIter(head:Node):
         head = head.next
     print("None")
 
-
-
+# LinkedList Creation
 a = Node('a')
 b = Node('b')
 c = Node('c')
@@ -30,6 +29,7 @@ b.next = c
 c.next = d
 d.next = e
 
+# Linked List : a->b->c->d->e
 
 print("Recursive Traversal: ",end="")
 traversalRec(a)

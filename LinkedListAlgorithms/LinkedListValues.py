@@ -19,7 +19,7 @@ def traversalRec(head:Node,values:list):
         traversalRec(head.next,values)
     return values
     
-
+# LinkedList Creation
 a = Node('a')
 b = Node('b')
 c = Node('c')
@@ -29,6 +29,8 @@ a.next = b
 b.next = c
 c.next = d
 d.next = e
+
+# Linked List : a->b->c->d->e
 
 print("Values Iter: ",traversalIter(a))
 print("Values Rec: ",traversalRec(a,[]))

@@ -21,7 +21,7 @@ def searchRec(head:Node,toSearch):
             return True
     return False
     
-
+# LinkedList Creation
 a = Node('a')
 b = Node('b')
 c = Node('c')
@@ -31,6 +31,8 @@ a.next = b
 b.next = c
 c.next = d
 d.next = e
+
+# Linked List : a->b->c->d->e
 
 print("Found 'c' Iter: ",searchIter(a,'c'))
 print("Found 'r' Rec: ",searchRec(a,'r'))
