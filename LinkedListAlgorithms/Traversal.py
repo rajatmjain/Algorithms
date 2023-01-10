@@ -3,14 +3,20 @@ class Node:
         self.value = value
         self.next = None
 
-def traversal(head:Node):
-    if(head.value==None):
+def traversalRec(head:Node):
+    if(head==None):
         return
     print(head.value,end="->")
     if(head.next!=None):
-        traversal(head.next)
+        traversalRec(head.next)
     else:    
         print("None")
+
+def traversalIter(head:Node):
+    while(head!=None):
+        print(head.value,end="->")
+        head = head.next
+    print("None")
 
 
 
@@ -24,4 +30,8 @@ b.next = c
 c.next = d
 d.next = e
 
-traversal(a)
+
+print("Recursive Traversal: ",end="")
+traversalRec(a)
+print("Iterative Traversal: ",end="")
+traversalIter(a)
