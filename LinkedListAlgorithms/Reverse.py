@@ -18,7 +18,7 @@ def traversalIter(head:Node):
         head = head.next
     print("None")
 
-def reverse(head:Node):
+def reverseIter(head:Node):
     previous = None
     current = head
     while(current!=None):
@@ -28,8 +28,12 @@ def reverse(head:Node):
         current = next
     return previous
 
-
-
+def reverseRec(head:Node,previous):
+    if(head==None):
+        return previous
+    next = head.next
+    head.next = previous
+    return reverseRec(next,head)
 
 # LinkedList Creation
 a = Node('a')
@@ -44,7 +48,21 @@ d.next = e
 
 # Linked List : a->b->c->d->e
 
-# print("Recursive Traversal: ",end="")
-# traversalRec(a)
-print("Iterative Traversal: ",end="")
-traversalIter(reverse(a))
+print("Recursive Reversal: ",end="")
+traversalRec(reverseRec(a,None))
+
+# LinkedList Creation
+a = Node('a')
+b = Node('b')
+c = Node('c')
+d = Node('d')
+e = Node('e')
+a.next = b
+b.next = c
+c.next = d
+d.next = e
+
+# Linked List : a->b->c->d->e
+
+print("Iterative Reversal: ",end="")
+traversalIter(reverseIter(a))
